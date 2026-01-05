@@ -1,0 +1,78 @@
+/*insi.css -menu horizontal*/
+/*ROOT:POUR faire des styles global reutilisable dans d'autre balisse*/
+:root{
+    --bg:#afe5f5da;
+    --text:#222;
+    --accent:#0b74de;
+    --hover:#075ba8;
+    --radius:8px;
+
+}
+/*Reinitialisation legere pour la Nav*/
+.main-nav{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.main-nav a{
+    display: inline-block;
+    padding: .6rem 1rem;
+    color: var(--text);
+    text-decoration: none;
+    border-radius: calc(var(--radius));
+    font-weight: 600;
+    transition: background .12s ease,color .12s ease, transform .08s ease;
+}
+/*hover et focus (accessibilite)*/
+.main-nav a:hover,
+.main-nav a:focus{
+    background: rgba(160, 8,180, 0.12);
+    color: var(--accent);
+    outline: none;
+    transform: translate Y(-1PX);
+    box-shadow: 0 6px 18px rgba(9,116, 22, .78);
+} 
+/*Etat du lien courant*/
+.main-nav a:active,
+.main-nav a [aria-current="page"]{
+    background: var(--accent);
+    color:white;
+    box-shadow: 0 6px 18px rgba(11, 116,222, .14);
+}
+/*petit mise en page du header*/
+.header{
+    background: var(--bg);
+    padding: .6rem 1rem ;
+    border-bottom: 1px solid rgba(0,11,34, .14);
+    display: flex;
+    justify-content: center;/*Centrer le text */
+}
+/*Responsive: SUR PETIT ECRANS*/
+@media(max-width: 640px){
+    .main-nav{
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.25rem;
+    }
+    .main-nav a{
+        text-align: center;
+        padding: .75rem;
+    }
+}
+.logo>img{
+    align-items:flex-start;
+    margin: 0px;
+    display: flex !important;
+    text-align: left;
+}
+.main-footer{
+      list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
